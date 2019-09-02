@@ -64,6 +64,51 @@ def condensa(cadena):
         print("[", "'", key, "'", ", ", diccionario[key], "]")
     print("]")
 
+
+
+#----------------3A--------------------
+
+#funcion recursiva que toma una lista, un indice y donde guardaremos el resultado
+def triangulo_linea(lista, indice, resultado):
+    #si nuestro indice ha recorrido toda la lista nos devuelve el resultado
+    tamLista = len(lista)
+    if indice == tamLista:
+        resultado.append(1)
+        return resultado
+    else:
+        if indice == 0: # si es el primer elemento guardaremos un 1 en la lista
+            resultado.append(1)
+            indice = indice + 1
+            return triangulo_linea(lista, indice, resultado)
+        else:# en otro caso suma el indice actual y el anterior de la lista y lo guarda en el resultado
+            resultado.append(lista[indice]+lista[indice-1])
+            indice = indice + 1
+            return triangulo_linea(lista, indice, resultado)
+
+#funcino recursiva que va guardando las listas que genera triangulo_linea en una listas
+#el parametro son n = maxima linea, i = indice que vamos, resultado = donde guardamos el resultado
+def triangulo(n, i, resultado):
+    #si el indice ya es mayor que n regresamos el resultado
+    if  i > n:
+        return resultado
+    else: # en otro caso
+        if i == 1: # si i = 1 llamamos por primera vez a la funcino recursiva
+            resultado.append([1])
+            i = i + 1
+            return triangulo(n, i, resultado)
+        else:#llamamos a la funcion recursiva
+            resultado.append(triangulo_linea(resultado[len(resultado)-1], 0, []))
+            i = i + 1
+            return triangulo(n, i, resultado)
+
+#funcion no recursiva que llama a otra funcion recursiva
+def triangulo_pascal(n):
+    if n == 0:
+        print([])
+    else:
+        print(triangulo(n, 1, []))
+
+
 #----------------3B--------------------
 
 #funcion que llama a los metodos recursivos
@@ -91,25 +136,35 @@ def subcadenasRecursiva(cadena, i, j, lista):
         lista.append(subcadena)
         return subcadenasRecursiva(cadena, i+1, j+1, lista)
 
-#-------4b-------------
-
     
 
 #menu
-def menu(param=-1):  
-    print("Ingresa una opción:\n1 para mas_repetido\n2 para condensa\n3 para subcadena")
-    param = int(input())
-    if param == 1:
-        mas_repetido([[1, 2, 3, 4], [2, 6, 1], [2, 3, 3, 1, 1, 1]])
-    elif param == 2:
-        condensa("aabbaaazzzz")
-    elif param == 3:
-        subcadena("abcd")
-    else:
-        print("Entrada invalida")
+def menu():
+    try:
+        entra = True
+        while entra:
+            print("\n1 para mas_repetido\n2 para condensa\n3 triangulo de pascal\n4 para subcadenas\n5 para salir\n")
+            param = int(input("Introduce una opción:"))
+            if param == 1:
+                mas_repetido([[1, 2, 3, 4], [2, 6, 1], [2, 3, 3, 1, 1, 1]])
+            elif param == 2:
+                opcion2 = input("Introduce una cadena:")
+                condensa(opcion2)
+            elif param == 3:
+                opcion3 = int(input("Introduce un número para el triangulo:"))
+                triangulo_pascal(opcion3)
+            elif param == 4:
+                opcion4 = input("Introduce una cadena:")
+                subcadena(opcion4)
+            elif param == 5:
+                entra = False
+                print("Saliendo...")
+            else:
+                print("Entrada invalida\nSaliendo...")
+    except:
+        print("Entrada invalida.\nSaliendo...")
 
-menu([])
-
+menu()
 #subcadena("abcd")
 #condensa("aabbaaazzzz")
 
