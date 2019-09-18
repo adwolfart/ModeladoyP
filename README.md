@@ -11,3 +11,8 @@ Funciones:
 - triangulo pascal
 - subcadenas
 
+
+Practica 4.
+- Base de datos.
+
+
