@@ -1,18 +1,20 @@
 # Modelado y progrmación, 2020-1
 
-Martínez, Adolfo.
+## Martínez, Adolfo.
 
 Carpeta con ejercicios correspondientes al curso de modelado y programación.
 
-- Practica 3.
-Funciones:
-- mas_repetido.
-- condensa
-- triangulo pascal
-- subcadenas
+###  Práctica 3.
+#### Funciones:
+- `mas_repetido`
+- `condensa`
+- `triangulo_pascal`
+- `subcadena`
 
 
-Practica 4.
+### Práctica 4.
 - Base de datos.
 
+### Práctica 5.
 
+- Simulaciones de cadenas de montaje.
