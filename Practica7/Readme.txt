@@ -11,3 +11,5 @@ Nota: Para declarar regiones contiguas de las que no lo son en un mismo renglon 
 Así, también en el primer renglon del archivo de texto se declaran las columnas y en el segundo las columnas.
 
 Solo funciona con tableros cuadrados.
+
+Integrante: Adolfo Arturo Martínez de la Cruz
