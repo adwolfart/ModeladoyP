@@ -1,15 +1,17 @@
 --
+Martínez, Adolfo.
+--
 
-La práctica se realizo usando las siguientes herramientas:
+La práctica se realizó usando las siguientes herramientas:
 - python 3.7
 - mysql 8.0
 - conda
 - pymysql
 
-Para ejecutar el programa, primero se debe de crear un entrono virtual usando conda e instalar el paquete pymysql, después  crear un usuario en la base de datos y configurar la función que inicializa la base de datos con las credenciales configuradas en la base de datos para poder acceder y poder jugar.
+Para ejecutar el programa:
+1. Crear un entrono virtual usando conda [https://docs.conda.io/projects/conda/en/latest/index.html]
+2. Instalar el paquete pymysql 
+3. Crear un usuario en la base de datos y asignarle los privilegios sobre la base de datos que se utilizará: 'Practica6' 
+4. Configurar la función 'conectarBD' que esta dentro del script 'menu.py' de acuerdo a los datos configurados en la base de datos
 
-Una vez realizada esta configuración, el programa se ejecuta con el comando: python3 menu.py.
-
-
-
-
+5. El programa se ejecuta con el comando: 'python3 menu.py'

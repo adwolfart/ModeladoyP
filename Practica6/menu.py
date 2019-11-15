@@ -22,7 +22,7 @@ class Usuarios(object):
 
 def conectarBD():
     try:
-        conn = pymysql.connect(host="localhost", port=3306, user="root", passwd="Coco27+1", db="Practica6")
+        conn = pymysql.connect(host="localhost", port=3306, user="runnie", passwd="runnie", db="Practica6")
         return conn
     except:
         print("Error en la conexion de la BD")
